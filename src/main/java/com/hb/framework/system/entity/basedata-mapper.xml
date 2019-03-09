@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="basedata">
+	<!-- 以下与实体类的中字段一致 -->
+	<sql id="selectId">
+		id,
+		(if(sys_base_data.type=0,'顶级类型',(select r.name from sys_base_data r where r.type=0 and r.value=sys_base_data.type))) type,
+		name,
+		value,
+		alias,
+		mark,
+		status  
+    </sql>
+	<!--resultType="BaseData" 每返回一条结果封装到BaseData里 -->
+	<select id="query" resultType="BaseData" parameterType="java.util.HashMap">
+		select
+		<include refid="selectId" />
+		from sys_base_data
+		<where>
+			<if test="t.name != null and t.name != ''">
+				name like '%${t.name}%'
+           </if>
+		</where>
+		order By id desc
+	</select>
+
+	<!-- 增加用户 -->
+	<insert id="add" parameterType="BaseData">
+		insert into sys_base_data(
+		type,
+		name,
+		value,
+		alias,
+		mark,
+		status
+		)
+		values (#{type},#{name},
+		#{value},#{alias},
+		#{mark},#{status}
+		)
+    </insert>
+
+	<delete id="deleteById" parameterType="String">
+		delete from sys_base_data where id=#{id}
+    </delete>
+	<select id="getById" parameterType="String" resultType="BaseData">
+		select
+		id,
+		type,
+		name,
+		value,
+		alias,
+		mark,
+		status
+		from sys_base_data where id=#{id}
+	</select>
+	<update id="update" parameterType="BaseData">
+		update sys_base_data
+		<set>
+			name=#{name},
+			type=#{type},
+			value=#{value},
+			mark=#{mark},
+			status=#{status},
+			alias=#{alias}
+        </set>
+		where id=#{id}
+	</update>
+	<select id="findtype" parameterType="String" resultType="BaseData">
+		select * from sys_base_data where type=#{type}
+    </select>
+    <select id="findTask" resultType="BaseData">
+		select * from sys_base_data where type='100'
+    </select>
+    <select id="findByAlias" resultType="BaseData" parameterType="String">
+		select * from sys_base_data where alias=#{alias}
+    </select>
+</mapper>

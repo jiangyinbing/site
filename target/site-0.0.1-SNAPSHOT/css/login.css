@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0px; padding:0px; list-style:none; }
+html {overflow:hidden;}
+label{ vertical-align:middle;}
+body{ background:url(../images/login_bj.jpg) no-repeat center top scroll #fdeaae;}
+.form_login{ background:url(../images/dl_bj.png) no-repeat; width:503px; height:377px; position:absolute; top:50%; left:50%; margin-left:-250px; margin-top:-220px;}
+.form_login form{ font:normal 16px/24px "Microsoft YaHei"; *font-family:"Microsoft YaHei","宋体"; position: absolute; left: 50%; margin-left: -110px; margin-top: -20px; top: 50%;}
+.form_login form ul{ height:auto;width:auto; overflow:hidden; padding:0; clear:both;}
+.form_login form input{ vertical-align:middle; height:20px ; border:1px solid #0082c4; margin-bottom:10px;}
+.form_pwd{ background:#e0e0e0;}
+.form_input{ margin-left:16px; background:#fff; width:154px;}
+.form_input_yzm{ margin-left:16px; width:80px; background:#fff; }
+.form_login form .form_dl{ display:block; background:url(../images/dl.png) no-repeat; width:221px; height:32px; border:none; text-indent:-999px;}
+.mg_dty{ margin-left:17px;}

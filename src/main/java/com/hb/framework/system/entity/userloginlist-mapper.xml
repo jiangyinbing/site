@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userloginlist">
+   <!-- 以下与实体类的中字段一致 -->
+   <sql id="selectId">
+       loginId,
+       userId,
+       loginTime,
+       loginIp
+   </sql>
+   <!-- 查询 -->
+   <select id="query" resultType="UserLoginList" parameterType="UserLoginList">
+   	   select u.userName,l.* from sys_userloginlist l,sys_user u
+   	   <where>
+   	       u.userId = l.userId
+   	       <if test="t.userName != null and t.userName != ''">
+				and u.userName like '%${t.userName}%'
+		   </if>
+		   <if test="t.loginTime != null and t.loginTime != ''">
+				and l.loginTime>=str_to_date('${t.loginTime}','%Y-%m-%d') 
+		   </if>
+   	   </where>
+   	   order By loginId desc
+   </select>
+    <!-- 查询 -->
+   <select id="queryAll" resultType="UserLoginList" parameterType="UserLoginList">
+   	   select u.userName,l.* from sys_userloginlist l,sys_user u
+   	   <where>
+   	       u.userId = l.userId
+   	       <if test="t.userName != null and t.userName != ''">
+				and u.userName like '%${t.userName}%'
+		   </if>
+   	   </where>
+   </select>
+     <!-- 查询 -->
+   <select id="getMap"  resultType="java.util.HashMap">
+   	   select loginIp,loginTime from sys_userloginlist
+   </select>
+   <!-- 新增用户登陆记录 -->
+   <insert id="add" parameterType="UserLoginList">
+     insert into sys_userloginlist(userId,loginIp)
+     values(#{userId},#{loginIp})
+   </insert>
+</mapper>

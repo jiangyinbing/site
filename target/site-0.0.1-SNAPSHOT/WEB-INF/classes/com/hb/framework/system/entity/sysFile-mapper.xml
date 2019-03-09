@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysfile">
+   <!-- 以下与实体类的中字段一致 -->
+   <sql id="selectId">
+       id,
+       type,
+       name,
+       sysname,
+       alias,
+       update,
+       pid,
+       u.userName,
+       userid
+   </sql>
+   <!-- 查询 -->
+   <select id="query" resultType="SysFile" parameterType="SysFile">
+   	   select u.userName,l.* from sys_file l,sys_user u
+   	   <where>
+   	       u.userId = l.userid
+   	       <if test="t.name != null and t.name != ''">
+				and l.name like '%${t.name}%'
+		   </if>
+		   <if test="t.type != null and t.type != ''">
+				and l.type=#{t.type}
+		   </if>
+   	   </where>
+   	   order By id desc
+   </select>
+    <!-- 查询 -->
+   <select id="queryAll" resultType="SysFile" parameterType="SysFile">
+   	   select u.userName,l.* from sys_file l,sys_user u
+   	   <where>
+   	       u.userId = l.userid
+   	       <if test="t.userName != null and t.userName != ''">
+				and u.userName like '%${t.userName}%'
+		   </if>
+   	   </where>
+   </select>
+   <!-- 新增 -->
+   <insert id="add" parameterType="SysFile">
+     insert into sys_file(
+       type,
+       name,
+       alias,
+       sysname,
+       pid,
+       filetype,
+       userid)
+     values(#{type},#{name},#{alias},#{sysname},#{pid},#{filetype},#{userid})
+   </insert>
+   <delete id="deleteById" parameterType="String">
+      delete from sys_file where id=#{id}
+   </delete>
+</mapper>

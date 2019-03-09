@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guarantor">
+	<!-- 以下与实体类的中字段一致 -->
+	<!--resultType="User" 每返回一条结果封装到User里 -->
+	<sql id="selectId">
+		guaranteeId,
+		userId,orderId,noncreditId,
+		relationship,guarantName,idType,
+		idNo,mobileNumber,
+		guaranteeStatus,fileName,filePath,
+		remark,jpaVersion,guaranteeContrNbr,
+		isSelected,applyformPath,applyformNam,
+		isElected
+	</sql>
+	<select id="queryByOrderId" resultType="Guarantor" parameterType="String">
+		select *
+		 from hb_guarantee where orderId = #{orderId}
+	</select>
+	
+	<select id="queryAll" resultType="Guarantor" parameterType="Guarantor">
+		select *
+		 from hb_guarantee
+	</select>
+	
+	<!-- 增加用户 -->
+	<insert id="add" parameterType="Guarantor">
+		insert into hb_guarantee (
+			userId,orderId,noncreditId,
+			relationship,guarantName,idType,
+			idNo,mobileNumber,
+			guaranteeStatus,fileName,filePath,
+			remark,jpaVersion,guaranteeContrNbr,
+			isSelected,applyformPath,applyformName,
+			isElected)
+		values (
+		#{userId},#{orderId}, #{noncreditId},
+		#{relationship},#{guarantName},#{idType},
+		#{idNo}, #{mobileNumber},
+		#{guaranteeStatus},#{fileName},#{filePath},
+		#{remark},#{jpaVersion},#{guaranteeContrNbr},
+		#{isSelected}, #{applyformPath},
+		#{applyformName}, #{isElected})
+	</insert>
+
+	<delete id="deleteById" parameterType="String">
+		delete from hb_guarantee where
+		guaranteeId=#{guaranteeId}
+	</delete>
+	
+	<update id="update" parameterType="Guarantor">
+		update hb_guarantee
+		<set>
+		guaranteeStatus=#{guaranteeStatus} 
+		</set>
+		where guaranteeId=#{guaranteeId}
+	</update>
+	
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+	<!-- 给实体Bean一个别名-->
+	    <!-- system-->
+		<typeAlias type="com.hb.framework.system.entity.User" alias="User" />
+		<typeAlias type="com.hb.framework.system.entity.UserLoginList" alias="UserLoginList" />
+		<typeAlias type="com.hb.framework.system.entity.Resources" alias="Resources"/>
+		<typeAlias type="com.hb.framework.system.entity.Roles" alias="Roles"/>
+		<typeAlias type="com.hb.framework.system.entity.ResourceRoles" alias="ResourceRoles"/>
+		<typeAlias type="com.hb.framework.system.entity.UserRoles" alias="UserRoles"/>
+		<typeAlias type="com.hb.framework.system.entity.ServerInfo" alias="ServerInfo"/>
+		<typeAlias type="com.hb.framework.system.entity.BaseData" alias="BaseData"/>
+		<typeAlias type="com.hb.framework.system.entity.Log" alias="Log"/>
+		<typeAlias type="com.hb.framework.system.entity.SysFile" alias="SysFile"/>
+		<typeAlias type="com.hb.framework.business.entity.Guarantor" alias="Guarantor"/>
+	
+	</typeAliases>
+</configuration>
