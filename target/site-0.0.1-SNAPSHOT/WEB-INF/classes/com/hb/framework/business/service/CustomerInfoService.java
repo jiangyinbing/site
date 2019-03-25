@@ -1,6 +1,8 @@
 package com.hb.framework.business.service;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -23,13 +25,15 @@ public class CustomerInfoService {
 		// TODO Auto-generated method stub
 		User user = (User)request.getSession().getAttribute("userSession");
 		String sql = "SELECT userId, userName, userNickname, userRealname, userAge, userSex, userAddress, userPhone, userMail,"
-				+ "userQQ, idType, idNo, idValidity, openBankId, cardNo, bankReservePhone, contrNbr, state, city, district,"
+				+ "userQQ, idNo, idValidity, openBankId, cardNo, bankReservePhone, contrNbr, state, city, district,"
 				+ "marrageStatus, education, profession, monthlywages, monthRepay,totalLoan, unitName, unitType, post,"
 				+ "department, unitPhone, homePhone, workYear, corporationNation, corporationNative, customerType, scale,"
 				+ "industNo, registerNo, registerOrg, registerDate, countryTaxNo, cityTaxNo, propertyId, employees, foundedDate,"
 				+ "realGovern, businessLicense, businessDate, registeredCapital, busiarea, registAddress, realAddress, postCode,"
 				+ "fax, companyEmail, webUrl, floorSpace, annualTurnover "
 				+ "FROM hb_application.sys_user where userId='"+ Integer.toString(user.getUserId()) +"'";
+
+
 		ResultSet queryrs = DBConnectionUtils.executeQuery(sql);
 		CustomerInfo customerInfo = new CustomerInfo(); 
 		try {
@@ -114,7 +118,8 @@ public class CustomerInfoService {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}	
+		}
+//           Map<String, Object> maps = new HashMap<String, Object>();
 		return customerInfo;
 	}
 	

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.341" errors="0" skipped="0" tests="1" name="junit.test.ResourcesServiceImplTest">
+<testsuite failures="0" time="0.969" errors="0" skipped="0" tests="1" name="junit.test.ResourcesServiceImplTest">
   <properties>
     <property name="idea.version" value="2017.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -29,7 +29,7 @@
     <property name="os.name" value="Windows 7"/>
     <property name="classworlds.conf" value="D:\maven\apache-maven-3.2.3\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="GBK"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_80\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.7.0_80\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.7.0_80\jre\bin;C:\Windows\system32;D:\maven\apache-maven-3.2.3\bin;D:\tomcat\apache-tomcat-7.0.76\lib;D:\tomcat\apache-tomcat-7.0.76\bin;D:\tools\mysql\mysql\mysql5.5\bin;D:\tools\IDEA\consul安装包\SpringCloudConsul-master;D:\tools\python;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_80\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\tools\mysql\mysql\mysql5.5\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\tools\mysql\mysql\mysql5.5\jre\bin;C:\Windows\system32;D:\maven\apache-maven-3.2.3\bin;D:\tomcat\apache-tomcat-7.0.76\lib;D:\tomcat\apache-tomcat-7.0.76\bin;D:\tools\mysql\mysql\mysql5.5\bin;D:\tools\IDEA\consul安装包\SpringCloudConsul-master;D:\tools\python;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="51.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -62,5 +62,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.341" classname="junit.test.ResourcesServiceImplTest" name="test"/>
+  <testcase time="0.969" classname="junit.test.ResourcesServiceImplTest" name="test"/>
 </testsuite>

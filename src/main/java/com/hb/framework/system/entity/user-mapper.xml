@@ -23,14 +23,15 @@
 		mark,
 		status,
 		parentNumber,
-		style,
+		style
+		/*,
 		idType,idNo,idValidity,openBankId,cardNo,bankReservePhone,contrNbr,state,city,district,custLimtAmt,custLmtAmtDate,
 		lastUdpTime,custId,custCertContainer,custElesignProtocolPath,jpaVersion,marrageStatus,education,profession,
 		monthlywages,monthRepay,totalLoan,unitName,unitType,post,department,unitPhone,homePhone,workYear,personalProtocolPath,
 		personalProtocolName,corporationNation,corporationNative,customerType,scale,industNo,registerNo,registerOrg,registerDate,
 		countryTaxNo,cityTaxNo,propertyId,employees,foundedDate,realGovern,businessLicense,businessDate,registeredCapital,busiarea,
 		registAddress,realAddress,postCode,linkMan,fax,companyEmail,webUrl,floorSpace,annualTurnover,institutionalRating,customerSource,
-		conditionState
+		conditionState*/
 	</sql>
 	<!--resultType="User" 每返回一条结果封装到User里 -->
 	<select id="query" resultType="User" parameterType="java.util.HashMap">

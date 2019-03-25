@@ -41,6 +41,7 @@
 						<tr>
 							<td height="30" width="20%">
 								<div align="right" >
+									${customerType}1111111111
 								    <c:if test="${customerType=='1'}">职位</c:if>
 								     <c:if test="${customerType=='2'}">关系</c:if>
 								：</div>

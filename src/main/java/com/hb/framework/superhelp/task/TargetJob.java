@@ -2,9 +2,7 @@ package com.hb.framework.superhelp.task;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
 import javax.servlet.ServletContext;
-
 import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;

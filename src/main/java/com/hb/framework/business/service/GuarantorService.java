@@ -330,7 +330,7 @@ public class GuarantorService {
 	private void genHeader(Map<String, Object> serviceHeader, String type) {
 	
 		serviceHeader.put("SERVICE_ID", type);   
-    	serviceHeader.put("ORG","000000000001");   
+    	       serviceHeader.put("ORG","000000000001");
 		serviceHeader.put("CHANNEL_ID","MC");   
 		serviceHeader.put("ACQ_ID","00230000");
 		serviceHeader.put("SUB_TERMINAL_TYPE","APP");

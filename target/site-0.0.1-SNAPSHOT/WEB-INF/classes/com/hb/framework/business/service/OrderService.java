@@ -52,7 +52,7 @@ public class OrderService {
 		//已有登录会话，获取信息，创建订单信息
 		User users = (User) request.getSession().getAttribute("userSession");
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		System.out.println("1111112222");
+		System.out.println("22222222222222");
 		String sql = " INSERT INTO hb_order(hb_orderId, userId, orderStatu, productCd, productName, "
 				   + " userMobile, createTime, lastModifyTime, repayType, jpaVersion, coreEntId, coreEntName, "
 				   + " merId, merName, merBusSn, merTaxationSn, merAddress, merRegCapital, "
